@@ -70,4 +70,70 @@ This is a javascript funtions that accepts objects of properties known as props.
 	- Feature rich
 	- Maintain their own private data
 	- Complex UI Logic
-	- Provide life cycle hooks
+
+## Hooks
+Hooks let you use state and other React features without writing a class.
+
+## JSX
+JavaScript XML (JSL) - is an extension of the JavaScript language syntax. It allows you write XML-like code for element and components.
+	- it has a tag name, attribute and children
+	- makes react code simpler and elegant
+	- translates to pure JavaScript
+	- Even you while using JSX you require to import react as it converts you jsx file to javascript file through React.createElement()
+differences with regular html like - 
+	- class : className
+	- for : htmlFor
+	- camelCase property naming convention • onclick - > onClick • tabindex - > tabindex
+
+## Props
+- Props is short for properties
+- It is the optional input your component can accept which allows the component to be dynamic.
+- We specify props as attributes
+- props are immutable
+- They get passed to the component
+- A parent passes props down to the children
+
+```Javascript
+function welcome(props){
+    return (
+    <div>
+    <h1> Hello, {props.name}</h1>;
+    {props.children};// <welcome name = "Brue"><p>This is Children<p></welcome> // <p> will be rendered for this particular decalration of component
+    <div>
+    }
+}
+```
+Output
+> Hello, Brue 
+> This is Children
+- this.props is used to access props
+
+## Props vs State
+
+### Props
+
+- props get passed to the component
+- Function parameters
+- props are immutable (readonly)
+  - props - Functional Components
+  - this.props - Class Components
+
+### State
+
+- state is managed within the component
+- variables declared in the function body
+- state can be changed
+  - useState Hook - Functional Components
+  - this.state - Class Components
+## setState
+Use setState to modify a component state.
+- Always make use of setState and never modify the state directly.As it will update the state value but React will not know the update made so it will not reRender the component to make the change visible.
+- Code has to executed after the state has been updated? Place that code in the the callback function which is the second argument to the setState method.
+As if you write that code below that setState it will go in the manner of Synchronus behavior but you want to to execute it after words change have been made so better use it in the callBack function to see the desired results. 
+- When you have to update state based on the previous state value, pass in a function as an argument instead of the regular object.
+As whenever you call the setState object several time in a row react will sum of all the calls to a single call and hence key values remain uneffected as thought so better pass in a function.
+```javascript
+this.setState((prevState)=> {
+	count: prevState.count + 1; 
+})
+```
