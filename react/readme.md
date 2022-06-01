@@ -187,4 +187,6 @@ return(
 	- Even more simpler, can be used inside the JSX
 - Short circuit operator
 	- Uses the && logical operator to evaluate both the right hand and left hand side if either the right or left hand side is false nothing with be returned.
-[For detailed examples](https://reactjs.org/docs/conditional-rendering.html)
+- [For detailed examples](https://reactjs.org/docs/conditional-rendering.html)
+
+
