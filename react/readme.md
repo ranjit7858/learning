@@ -137,3 +137,41 @@ this.setState((prevState)=> {
 	count: prevState.count + 1; 
 })
 ```
+
+## Binding Event Handlers
+
+-There's no need to bind functions/callbacks in functional components since there's no this in functions. In classes, it was important to bind this because we want to ensure that the this in the callbacks referred to the component's instance itself. However, doing .bind in the constructor has another useful property of creating the functions once during the entire lifecycle of the component and a new callback wasn't created in every call of render(). To do only initialize the callback once using React hooks, you would use useCallback.
+
+```javascript
+class Foo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  }
+```
+
+## Methods As Props
+```javascript
+// child.js
+function childComponent(props){
+return(
+	<div>
+	<button onClick = {()=>props.greetHandler(<you can also use this technique to pass in the parameter>)}> Greet Parent</button>
+	</div>
+)}
+// parent.js
+constructor (props ){
+
+super ( props )
+this.state = { parentName : ' Parent ' } 
+this.greetParent = this.greet Parent.bind ( this ) } 
+greet Parent ( ) { alert ( Hello $ { this.state.parentName } ' ) }
+render ( ) { 
+return(
+<div>
+<childComponent greetHandler = {this.greetParent}/>
+</div>
+)  } }
+
+```
