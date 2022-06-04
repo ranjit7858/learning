@@ -204,3 +204,10 @@ return(
 	- The item on your list do not have a unique id.
 	- The list is a static list and will not change.
 	- The list will never be re-ordered or filtered.
+
+## Styling React Components.
+When can use the following options to style react component
+- CSS stylesheets
+- Inline styling : in react inline style are not specified as string instead they are specified as an object whose key is the camel case version of the style name and the value is usually a string.
+- CSS Modules : works from react-script >= 2, the file naming convention to be used for css modules with create-react-app - the filename must be suffixed with .module.css
+- CSS in JS Libraries (Styled Components)
